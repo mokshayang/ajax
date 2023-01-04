@@ -62,6 +62,26 @@
                         
                 //     }
                 // });
+                $.get("url", myData,
+                    function (data, textStatus, jqXHR) {
+                        
+                    },
+                    "dataType"
+                );
+                //
+                $.getJSON("url", myData,
+                    function (data, textStatus, jqXHR) {
+                        
+                    }
+                );
+                    
+                //jqpost 
+                // $.post("url", myData,
+                //     function (res, textStatus, jqXHR) {
+                        
+                //     },
+                //     "json"
+                // );
             $.ajax({
                 url: "sumdata.php",
                 type: "post",

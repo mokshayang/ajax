@@ -6,6 +6,7 @@ function dd($array){
 }
 $data = $_POST;
 
+
 // dd($data);
 
 // $num1 = $data['num1'];
