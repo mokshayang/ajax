@@ -52,7 +52,16 @@
                     'chk' :  $('#name').val(),
                 }
                 console.log('values',values);
-           
+            //直接打 jqajax 就會出現下面
+                // $.ajax({
+                //     type: "method",
+                //     url: "url",
+                //     data: "data",
+                //     dataType: "dataType",
+                //     success: function (response) {
+                        
+                //     }
+                // });
             $.ajax({
                 url: "sumdata.php",
                 type: "post",
