@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<style>
+    .box {
+        border: 1px solid black;
+        height: 300px;
+    }
+
+    div {
+        margin-bottom: 10px;
+        color: red;
+        border: 1px solid red;
+        overflow: auto;
+    }
+
+    p {
+        margin-bottom: 10px;
+        color: green;
+        border: 1px solid red;
+    }
+
+    div>button {
+        margin-bottom: 10px;
+        border: 1px solid blue;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- <div class="container">
+    <div class="row justify-content-center text-center " >
+        <div class="col-6 col-md-4 col-lg-3 text-bg-primary p-3">1</div>
+        <div class="col-6 col-md-4 col-lg-3 text-bg-danger p-3">2</div>
+        <div class="col-6 col-md-4 col-lg-3 text-bg-secondary p-3">3</div>
+        <div class="col-6 col-md-4 col-lg-3 text-bg-warning p-3">4</div>
+    </div>
+</div> -->
+    <h3 class="text-center mt-3 mb-2">jquery append relative project</h3>
+    <div class="container">
+        <div class="row">
+            <div class="box col-6">
+                <h4 class="text-center">append</h4>
+                <div class="parentDiv">
+                    div
+                    <p class="childP">
+                        p p p
+                    </p>
+                </div>
+                <div>
+                    <button type="button">myBtn</button>
+                </div>
+            </div>
+            <div class="box col-6">
+                <h4 class="text-center">prepend</h4>
+                <div>
+                    <button type="button">myBtn</button>
+                </div>
+            </div>
+            <div class="box col-6">
+                <h4 class="text-center">after</h4>
+                <div>
+                    <button type="button">myBtn</button>
+                </div>
+            </div>
+            <div class="box col-6">
+                <h4 class="text-center">before</h4>
+                <div>
+                    <button type="button">myBtn</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(function () {
+            const myBtn = $('button');
+            myBtn.click(function () {
+                let parentDiv = $(this).parent().parent().find('.parentDiv');
+                console.log('parentDiv', parentDiv);
+                parentDiv.append('<p>hello append</p>')
+
+
+            })
+
+        });
+        myBtn.on('change',function(){
+
+        })
+        addEventListener('change',function(){
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap demo</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+
+</style>
+<body>
+    <h3 class="myH3">colne</h3>
+    <div id="myDiv">
+        <button type="button">myBtn</button>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+$(function(){
+    const myBtn = $('button');
+    const myH3 = $('.myH3');
+    const myDiv =$('#myDiv');
+    myBtn.on('click',()=>{
+        console.log('myBtn ok');
+        clooneData = $(myH3).last().clone();
+        //clone(ture) 可複製事件(event)
+        myDiv.prepend(clooneData);
+        console.log($(myH3));
+    })
+    //刪除鍵
+    delBtn.on('clock',()=>{
+        const getTr = $(this).parent().parent();
+        let gerTrNum = $('tboky>tr').length;
+        if(gerTrNum>1){
+            getTr.remove();
+        }
+
+    })
+})
+</script>
+</body>
+</html>

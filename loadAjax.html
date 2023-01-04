@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="time.css">
+</head>
+<style>
+    div {
+        margin: 0 auto;
+        border: 1px solid #333;
+        width: 30%;
+        height: 200px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <div>
+        <form action="sumdata.php" method="post" id="myForm">
+            <p>
+                <label for="name"> name ? &nbsp; </label>
+                <input type="number" name="num1" id="name">
+            <p>
+                <label for="mobile"> moblie ? </label>
+                <input type="number" name="num2" id="mobile">
+            </p>
+            <input type="submit" value="submit" >
+            <p id="p"></p>
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(function () {
+            const myForm = $('#myForm');
+            const myP = $('#p');
+            myForm.submit(function(e){
+                console.log(e);
+                e.preventDefault();
+                console.log('this',this);
+                // let values = $('#name');
+
+                //  var values = $(this).serialize();
+                // var values = $(this).serializeArray();
+                let values = {
+                    'chk' :  $('#name').val(),
+                }
+                console.log('values',values);
+           
+            $.ajax({
+                url: "sumdata.php",
+                type: "post",
+                data: values,
+                dataType : 'json',
+                success: function (response) {
+                    // You will get response from your PHP page (what you echo or print)
+                    console.log('response',response);
+                    console.log('respons[num1]',response['num1']);
+                    console.log('respons[chk]',response['chk']);
+                    // console.log('respons[num2]',response['num2']);
+                    // myP.text(response.result);
+                    myP.text(response.result);
+                }
+                // error: function (jqXHR, textStatus, errorThrown) {
+                //     console.log(textStatus, errorThrown);
+                // }
+            });
+        })
+
+    
+
+
+        })
+    </script>
+</body>
+
+</html>

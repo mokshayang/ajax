@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="time.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="digiImg">
+        <div id="ck1" class="mg1"></div>
+        <div id="ck2" class="mg2"></div>
+        <div class="mgd">:</div>
+        <div id="ck3" class="mg3"></div>
+        <div id="ck4" class="mg4"></div>
+        <div class="mgd">:</div>
+        <div id="ck5" class="mg5"></div>
+        <div id="ck6" class="mg6"></div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(function () {
+            function refresh() {
+                const nt = new Date();
+                // console.log('nt', nt);
+                const nh = nt.getHours(); // 15
+                const nm = nt.getMinutes(); // 45
+                const ns = nt.getSeconds();// 50
+
+                const //時間計算 :
+                    nk1 = Math.floor(nh / 10),
+                    nk2 = nh % 10,
+                    nk3 = Math.floor(nm / 10),
+                    nk4 = nm % 10,
+                    nk5 = Math.floor(ns / 10),
+                    nk6 = ns % 10;
+
+                //位置呼叫 css possition system //切換圖片
+                document.getElementById('ck1').className = `mg${nk1}`;
+                document.getElementById('ck2').className = `mg${nk2}`;
+                document.getElementById('ck3').className = `mg${nk3}`;
+                document.getElementById('ck4').className = `mg${nk4}`;
+                document.getElementById('ck5').className = `mg${nk5}`;
+                document.getElementById('ck6').className = `mg${nk6}`;
+
+                // : 閃錯(初始直) :
+                document.getElementsByClassName('mgd')[0].style.opacity = 1;
+                document.getElementsByClassName('mgd')[1].style.opacity = 1;
+                // : 閃錯輸出 :
+                setTimeout(() => {
+                    document.getElementsByClassName('mgd')[0].style.opacity = 0;
+                    document.getElementsByClassName('mgd')[1].style.opacity = 0;
+                }, 500)
+            }
+            // 抓取//sec
+            setInterval(refresh, 1000);
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>
